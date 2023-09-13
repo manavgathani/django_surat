@@ -58,15 +58,19 @@
 								<li><a href="{% url 'contact' %}">Contact</a></li>
 								<li><a href="#">Shop</a>
 									<ul class="sub-menu">
-										<li><a href="">Shop</a></li>
+										<li><a href="{% url 'shop' %}">Shop</a></li>
 										
-										<li><a href="">Check Out</a></li>
-										<li><a href="">Wishlist
+										<li><a href="{% url 'checkout' %}">Check Out</a></li>
+										<li><a href="{% url 'wishlist' %}">Wishlist
 										
 										</a></li>
-										<li><a href="">Cart
+										<li><a href="{% url 'cart' %}">Cart {% if request.session.cart_count != 0 %}
+											({{request.session.cart_count}})
+										
 										
 											</a></li>
+											{% endif %}
+										
 									
 									</ul>
 								</li>
